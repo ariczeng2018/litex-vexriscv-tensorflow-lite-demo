@@ -15,6 +15,7 @@ Clone the repository and submodules:
 ```bash
 git clone https://github.com/antmicro/litex-vexriscv-tensorflow-lite-demo
 cd litex-vexriscv-tensorflow-lite-demo
+DEMO_HOME=`pwd`
 git submodule update --init --recursive
 ```
 
@@ -40,7 +41,7 @@ chmod +x zephyr-sdk-0.11.2-setup.run
 
 Build the `Hello World` demo with:
 ```bash
-cd tensorflow
+cd $DEMO_HOME/tensorflow
 make -f tensorflow/lite/micro/tools/make/Makefile TARGET=zephyr_vexriscv hello_world_bin
 ```
 The resulting binaries can be found in the `tensorflow/lite/micro/tools/make/gen/zephyr_vexriscv_x86_64/hello_world/build/zephyr` folder.
@@ -49,7 +50,7 @@ The resulting binaries can be found in the `tensorflow/lite/micro/tools/make/gen
 
 Build the `Magic Wand` demo with:
 ```bash
-cd tensorflow
+cd $DEMO_HOME/tensorflow
 make -f tensorflow/lite/micro/tools/make/Makefile TARGET=zephyr_vexriscv magic_wand_bin
 ```
 The resulting binaries can be found in the `tensorflow/lite/micro/tools/make/gen/zephyr_vexriscv_x86_64/magic_wand/build/zephyr` folder.
@@ -64,7 +65,7 @@ Execute `git checkout -b tf_demo` in the `litex-buildenv` directory after clonin
 
 Build the gateware with:
 ```bash
-cd litex-buildenv
+cd $DEMO_HOME/litex-buildenv
 export CPU=vexriscv
 export CPU_VARIANT=full
 export PLATFORM=arty
@@ -95,7 +96,7 @@ Install Renode as [detailed in its README file](https://github.com/renode/renode
 
 Now you should have everything to run the simulation:
 ```bash
-cd renode
+cd $DEMO_HOME/renode
 renode -e "s @litex-vexriscv-tflite.resc"
 ```
 
