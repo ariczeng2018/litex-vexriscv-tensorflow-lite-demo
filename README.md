@@ -113,9 +113,10 @@ renode -e "s @litex-vexriscv-tflite.resc"
 
 You should see the following output on the UART (which will open as a separate terminal in Renode automatically):
 ```
-Got id: 0xe5
-***** Booting Zephyr OS build v1.7.99-22021-ga6d97078a3e2 *****
-Got accelerometer
+*** Booting Zephyr OS build 0.6.0-86741-g626bb2c4d0bd  ***
+4 bytes lost due to alignment. To avoid this loss, please make sure the tensor_arena is 16 bytes aligned.
+Got accelerometer, label: accel-0
+
 RING:
           *
        *     *
@@ -124,6 +125,7 @@ RING:
      *         *
        *     *
           *
+
 SLOPE:
         *
        *
@@ -133,6 +135,7 @@ SLOPE:
    *
   *
  * * * * * * * *
+
 RING:
           *
        *     *
@@ -141,6 +144,7 @@ RING:
      *         *
        *     *
           *
+
 SLOPE:
         *
        *
@@ -149,7 +153,7 @@ SLOPE:
     *
    *
   *
- * * * * * * * *
+ * * * * * * * * 
 ```
 
 Refer to the [Renode documentation](https://renode.readthedocs.org) for details on how to use Renode to implement more complex usage scenarios, and use its advanced debug capabilities, or set up CI testing your ML-oriented system. If you need commercial support, please contact us at [support@renode.io](mailto:support@renode.io).
