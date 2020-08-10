@@ -35,7 +35,10 @@ chmod +x zephyr-sdk-0.11.2-setup.run
 sudo ./zephyr-sdk-0.11.2-setup.run -- -d /opt/zephyr-sdk
 ```
 
+Export Zephyr configuration:
 ```bash
+export ZEPHYR_TOOLCHAIN_VARIANT=zephyr
+export ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk
 ```
 
 ## Building the demos
