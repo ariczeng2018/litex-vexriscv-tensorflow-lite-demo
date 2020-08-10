@@ -35,15 +35,7 @@ chmod +x zephyr-sdk-0.11.2-setup.run
 sudo ./zephyr-sdk-0.11.2-setup.run -- -d /opt/zephyr-sdk
 ```
 
-Create and configure a virtual environemnt for building demos:
 ```bash
-# create virutal env
-virtualenv tensorflow/lite/micro/tools/make/downloads/zephyr/venv-zephyr
-# activate it and install Zephyr python requirements
-(
-   source tensorflow/lite/micro/tools/make/downloads/zephyr/venv-zephyr/bin/activate
-   pip3 install -r tensorflow/lite/micro/tools/make/downloads/zephyr/scripts/requirements.txt
-)
 ```
 
 ## Building the demos
